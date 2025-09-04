@@ -1,3 +1,6 @@
+//still have to install terraform and docker on the machine, automate this ASAP
+
+
 terraform {
   required_providers {
     docker = {
