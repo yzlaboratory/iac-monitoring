@@ -44,7 +44,7 @@ resource "docker_container" "grafana" {
         internal = 3000
         external = 3000
     }
-    volumes = {
+    volumes {
         volume_name = "grafana-storage"
         container_path = "/var/lib/grafana" 
     }
@@ -58,7 +58,7 @@ resource "docker_container" "loki" {
         external = 3100
     }
     command = ["-config.file=./configs/loki/local-config.yaml"]
-    networks_advanced = {
+    networks_advanced {
         name = "grafana-oss-network"
     }
      //configure proper storage in config file and mount as volume
@@ -72,7 +72,7 @@ resource "docker_container" "mimir" {
         external = 9009
     }
     command = ["-config.file=./configs/mimir/config.yaml"]
-    networks_advanced = {
+    networks_advanced {
         name = "grafana-oss-network"
     }
     //configure proper storage in config file and mount as volume
