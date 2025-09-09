@@ -60,13 +60,15 @@ resource "docker_container" "loki" {
         internal = 3100
         external = 3100
     }
-    command = ["-config.file=./configs/loki/local-config.yaml"]
+    command = ["-config.file=./configs/loki/local-config.yml"]
     networks_advanced {
         name = "grafana-oss-network"
     }
      //configure proper storage in config file and mount as volume
 }
 
+
+//this container still has problems
 resource "docker_container" "mimir" {
     image = docker_image.mimir.image_id
     name  = "mimir"
