@@ -1,0 +1,1 @@
+Right now this is just me playing around with Grafana OSS and Terraform. When its done this will be a free script to install and configure Grafana OSS Stack on a Linux machine. I'll probably write an article about it aswell.
